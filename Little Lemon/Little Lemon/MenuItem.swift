@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct MenuItem : Codable {
-    var id = UUID()
+struct MenuItem: Decodable {
     let title: String
     let image: String
     let price: String
