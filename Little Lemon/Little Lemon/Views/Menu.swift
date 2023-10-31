@@ -40,7 +40,7 @@ struct Menu: View {
             Header()
             VStack(alignment: .leading, spacing: 5) {
                     Text("Little Lemon")
-                    .foregroundColor(Color(hex: 0xf1c514))
+                    .foregroundColor(Color(red: 241, green: 197, blue: 20))
                     .fontWeight(.bold)
                     .font(.largeTitle)
                     .padding(.top, 8)
@@ -70,7 +70,7 @@ struct Menu: View {
             .padding(.leading)
             .frame(maxWidth: .infinity)
             .foregroundColor(.white)
-            .background(Color(hex: 0x394C45))
+            .background(Color(red: 57, green: 76, blue: 69))
             
             
             FetchedObjects(predicate: buildPredicate(),
@@ -78,10 +78,11 @@ struct Menu: View {
                            content: { (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
-
                             VStack(alignment: .leading) {
                                 Text((dish.title ?? ""))
                                 Text("$" + (dish.price ?? ""))
+                                Text((dish.descriptionDish ?? "Description"))
+                                Text((dish.category ?? "Category"))
                                 let imageURL = dish.image ?? ""
                                 AsyncImage(url: URL(string: imageURL)!){ image in
                                     image
@@ -121,6 +122,9 @@ struct Menu: View {
                     newDish.title = $0.title
                     newDish.image = $0.image
                     newDish.price = $0.price
+                    newDish.category = $0.category
+                    newDish.descriptionDish = $0.descriptionDish
+
                 })
 //                Save data in database after loop ends
                 try? viewContext.save()
@@ -140,12 +144,11 @@ struct Menu_Previews: PreviewProvider {
 }
 
 extension Color {
-    init(hex: Int, opacity: Double = 1.0) {
-        let red = Double((hex & 0xff0000) >> 16) / 255.0
-        let green = Double((hex & 0xff00) >> 8) / 255.0
-        let blue = Double((hex & 0xff) >> 0) / 255.0
-        self.init(.sRGB, red: red, green: green, blue: blue, opacity: opacity)
+    init(red: Int, green: Int, blue: Int) {
+        self.init(red: Double(red) / 255.0, green: Double(green) / 255.0, blue: Double(blue) / 255.0)
     }
 }
+
+
 
 
