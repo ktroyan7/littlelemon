@@ -12,6 +12,10 @@ import SwiftUI
 struct Menu: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+ 
+    @State var searchText = ""
+    @State private var selectedCategory: String = ""
+    
     
     //    Build sort descriptor for FetchObjects to sort by title
     func buildSortDescriptors() -> [NSSortDescriptor] {
@@ -19,23 +23,30 @@ struct Menu: View {
                                  ascending: true,
                                  selector: #selector(NSString.localizedStandardCompare))]
     }
-    
-    //    Create search variable for filtering FetchObjects
-    @State var searchText = ""
-    
-    
+
+        
     //    Create predicate to filder FetchObjects with searchText variable
     func buildPredicate() -> NSPredicate {
-        //        empy searchText filters all dishes so return value: true if empty
-        if searchText.isEmpty {
-            return NSPredicate(value: true)
+        var predicates: [NSPredicate] = []
+        
+        if !searchText.isEmpty {
+            predicates.append(NSPredicate(format: "title CONTAINS[cd] %@", searchText))
+        }
+        
+        if !selectedCategory.isEmpty {
+            predicates.append(NSPredicate(format: "category == %@", selectedCategory))
+        }
+        
+        if predicates.isEmpty {
+            return NSPredicate(value: true) // Empty predicates return all dishes
         } else {
-            return NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         }
     }
     
     
     var body: some View {
+        
         VStack {
             Header()
             VStack(alignment: .leading, spacing: 5) {
@@ -50,10 +61,18 @@ struct Menu: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.leading)
-            //            .foregroundColor(.white)
+            .foregroundColor(.white)
             .background(Color(red: 57, green: 76, blue: 69))
-            
-            
+
+            Picker("Category", selection: $selectedCategory) {
+                Text("All").tag("")
+                Text("Starters").tag("starters")
+                Text("Mains").tag("mains")
+                Text("Desserts").tag("desserts")
+                Text("Drinks").tag("drinks")
+            }
+            .pickerStyle(.segmented)
+
             FetchedObjects(predicate: buildPredicate(),
                            sortDescriptors: buildSortDescriptors(),
                            content: { (dishes: [Dish]) in
