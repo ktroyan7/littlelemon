@@ -63,8 +63,10 @@ struct Menu: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text((dish.title ?? ""))
+                                        .fontWeight(.semibold)
                                     Text("Price: $" + (dish.price ?? ""))
                                     Text((dish.descriptionDish ?? "Description"))
+                                        .lineLimit(2)
                                 }
                                 Spacer()
                                 let imageURL = dish.image ?? ""
