@@ -29,15 +29,15 @@ struct UserProfile: View {
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.black, lineWidth: 3))
             
-            Text("\(firstName)")
+            Text("First Name: \(firstName)")
                 .font(.headline)
-                .foregroundColor(.black)
-            Text("\(lastName)")
+  
+            Text("Last Name: \(lastName)")
                 .font(.headline)
-                .foregroundColor(.black)
-            Text("\(email)")
+
+            Text("Email: \(email)")
                 .font(.headline)
-                .foregroundColor(.black)
+
             Button {
                 UserDefaults.standard.set("", forKey: kFirstName)
                 UserDefaults.standard.set("", forKey: kLastName)

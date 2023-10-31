@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Header: View {
     
-    @Binding var isLoggedIn: Bool
+    @Environment(\.presentationMode) var presentation
+    
+    let isLoggedIn: Bool = UserDefaults.standard.bool(forKey: kIsLoggedIn)
     
     var body: some View {
         HStack (alignment: .center) {
@@ -29,7 +31,7 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header(isLoggedIn: .constant(true))
+        Header()
     }
 }
 

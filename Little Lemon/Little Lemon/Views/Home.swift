@@ -9,13 +9,12 @@ import SwiftUI
 
 struct Home: View {
     
-    @Binding var isLoggedIn: Bool
     
     let persistence = PersistenceController.shared
     
     var body: some View {
         TabView {
-            Menu(isLoggedIn: $isLoggedIn)
+            Menu()
                 .environment(\.managedObjectContext, persistence.container.viewContext)
                 .tabItem({
                     Label("Menu", systemImage: "list.dash")
@@ -31,6 +30,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(isLoggedIn: .constant(true))
+        Home()
     }
 }

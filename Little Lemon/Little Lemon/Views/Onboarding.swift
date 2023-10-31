@@ -26,8 +26,8 @@ struct Onboarding: View {
         VStack {
             NavigationView {
                 VStack {
-                    NavigationLink(destination: Home(isLoggedIn: $isLoggedIn), isActive: $isLoggedIn) { EmptyView() }
-                    Header(isLoggedIn: $isLoggedIn)
+                    NavigationLink(destination: Home(), isActive: $isLoggedIn) { EmptyView() }
+                    Header()
                     HeroSection()
                     Form {
                         Section(header: Text("Personal Information")) {
