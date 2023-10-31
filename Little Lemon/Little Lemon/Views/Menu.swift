@@ -43,24 +43,26 @@ struct Menu: View {
                     .foregroundColor(Color(hex: 0xf1c514))
                     .fontWeight(.bold)
                     .font(.largeTitle)
-                    .padding(.top)
+                    .padding(.top, 8)
                 HStack{
                     VStack(alignment: .leading) {
-                        Text("San Diego")
+                        Text("New York")
                             .font(.title)
                             .padding(.bottom, 2)
                         
-                        Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                        Text("Family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
                     }
+                    Spacer()
                     Image("Hero image")
                         .resizable()
-                        .frame(width: 150, height: 140)
+                        .frame(width: 150, height: 150)
                         .cornerRadius(25)
+                        .padding(.trailing, 10)
                 }
                 TextField("     ...Search menu", text: $searchText)
                     .frame(width: 350, height: 40)
                     .font(.body)
-                    .foregroundColor(.white)
+//                    .foregroundColor(.white)
                     .background(Color.white)
                     .cornerRadius(15)
                     .padding(15)
@@ -90,7 +92,6 @@ struct Menu: View {
                                 }.frame(width: 250, height: 250)
                                 
                             }
-//                        }
                         }
                 }
             })
