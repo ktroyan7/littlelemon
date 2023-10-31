@@ -23,35 +23,54 @@ struct Onboarding: View {
     @State private var alertMessage = ""
     
     var body: some View {
-        
-        NavigationView {
-            VStack {
-                NavigationLink(destination: Home(), isActive: $isLoggedIn) { EmptyView() }
-                TextField("First Name", text: $firstName)
-                TextField("Last Name", text: $lastName)
-                TextField("Email", text: $email)
-                Button {
-                    print("clicked")
-                    if (firstName.isEmpty || lastName.isEmpty || email.isEmpty) {
-                        alertMessage = "Please enter all required fields"
-                        showAlert.toggle()
-                    } else {
-                        isLoggedIn = true
-                        saveProfile()
+        VStack {
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: Home(isLoggedIn: $isLoggedIn), isActive: $isLoggedIn) { EmptyView() }
+                    Header(isLoggedIn: $isLoggedIn)
+                    HeroSection()
+                    Form {
+                        Section(header: Text("Personal Information")) {
+                            Text("First Name*")
+                            TextField("First Name", text: $firstName)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            Text("Last Name*")
+                            TextField("Last Name", text: $lastName)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            Text("Email*")
+                            TextField("Email", text: $email)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                        }
                     }
-                } label: {
-                    Text("Register")
-                }
-                 .padding()
-                 .alert(isPresented: $showAlert) {
-                     Alert(title: Text(alertMessage))
+                    .padding(.bottom)
+                    Spacer()
+                    Button {
+                        print("clicked")
+                        if (firstName.isEmpty || lastName.isEmpty || email.isEmpty) {
+                            alertMessage = "Please enter all required fields"
+                            showAlert.toggle()
+                        } else {
+                            isLoggedIn = true
+                            saveProfile()
+                        }
+                    } label: {
+                        Text("Register")
+                            .foregroundColor(.black)
+                            .frame(width: 0.7 * UIScreen.main.bounds.width, height: 50) // 70% of screen width
+                            .background(Color(red: 241, green: 197, blue: 20)) // Yellow color (RGB values)
+                            .cornerRadius(35) // Corner radius
+                        
+                    }
+                    .alert(isPresented: $showAlert) { Alert(title: Text(alertMessage)) }
+                    
                  }
-             }
-            .onAppear() {
-                if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
-                    isLoggedIn = true
+                .onAppear() {
+                    if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+                        isLoggedIn = true
+                    }
                 }
             }
+
         }
      }
      

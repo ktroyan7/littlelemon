@@ -19,12 +19,25 @@ struct UserProfile: View {
     var body: some View {
         VStack {
             Text("Personal Information")
+                .font(.title)
+                .foregroundColor(.black)
+            
             Image("profile-image-placeholder")
                 .resizable()
-                .frame(width: 100, height: 150)
+                .frame(width: 150, height: 150)
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.black, lineWidth: 3))
+            
             Text("\(firstName)")
+                .font(.headline)
+                .foregroundColor(.black)
             Text("\(lastName)")
+                .font(.headline)
+                .foregroundColor(.black)
             Text("\(email)")
+                .font(.headline)
+                .foregroundColor(.black)
             Button {
                 UserDefaults.standard.set("", forKey: kFirstName)
                 UserDefaults.standard.set("", forKey: kLastName)
@@ -33,6 +46,11 @@ struct UserProfile: View {
                 self.presentation.wrappedValue.dismiss()
             } label: {
                 Text("Logout")
+                    .font(.headline)
+                    .frame(width: 200, height: 40)
+                    .background(Color.yellow)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
             }
 
                 

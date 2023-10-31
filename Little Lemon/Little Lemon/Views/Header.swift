@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct Header: View {
+    
+    @Binding var isLoggedIn: Bool
+    
     var body: some View {
         HStack (alignment: .center) {
             Spacer()
             Image("Logo")
                 .frame(alignment: .center)
             Spacer()
-            Image("profile-image-placeholder")
+            Image(isLoggedIn ? "profile-image-placeholder" : "")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: .trailing)
                 .cornerRadius(20)
@@ -26,7 +29,7 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header()
+        Header(isLoggedIn: .constant(true))
     }
 }
 

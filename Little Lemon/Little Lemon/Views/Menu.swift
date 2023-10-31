@@ -11,6 +11,8 @@ import SwiftUI
 
 struct Menu: View {
     
+    @Binding var isLoggedIn: Bool
+    
     @Environment(\.managedObjectContext) private var viewContext
     
 //    Build sort descriptor for FetchObjects to sort by title
@@ -37,39 +39,20 @@ struct Menu: View {
     
     var body: some View {
         VStack {
-            Header()
+            Header(isLoggedIn: $isLoggedIn)
             VStack(alignment: .leading, spacing: 5) {
-                    Text("Little Lemon")
-                    .foregroundColor(Color(red: 241, green: 197, blue: 20))
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
-                    .padding(.top, 8)
-                HStack{
-                    VStack(alignment: .leading) {
-                        Text("New York")
-                            .font(.title)
-                            .padding(.bottom, 2)
-                        
-                        Text("Family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-                    }
-                    Spacer()
-                    Image("Hero image")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                        .cornerRadius(25)
-                        .padding(.trailing, 10)
-                }
-                TextField("     ...Search menu", text: $searchText)
+                HeroSection()
+                TextField(" ...Search menu", text: $searchText)
                     .frame(width: 350, height: 40)
-                    .font(.body)
-//                    .foregroundColor(.white)
+//                    .font(.body)
                     .background(Color.white)
+//                    .foregroundColor(.black)
                     .cornerRadius(15)
-                    .padding(15)
+                    .padding(8)
                 }
-            .padding(.leading)
             .frame(maxWidth: .infinity)
-            .foregroundColor(.white)
+            .padding(.leading)
+//            .foregroundColor(.white)
             .background(Color(red: 57, green: 76, blue: 69))
             
             
@@ -139,7 +122,7 @@ struct Menu: View {
 
 struct Menu_Previews: PreviewProvider {
     static var previews: some View {
-        Menu()
+        Menu(isLoggedIn: .constant(true))
     }
 }
 
