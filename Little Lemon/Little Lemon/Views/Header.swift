@@ -11,13 +11,15 @@ struct Header: View {
     var body: some View {
         HStack (alignment: .center) {
             Spacer()
-            Spacer()
             Image("Logo")
                 .frame(alignment: .center)
             Spacer()
             Image("profile-image-placeholder")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: .trailing)
+                .cornerRadius(10)
+                .padding(.trailing, 20)
+                
         }
     }
 }

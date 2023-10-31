@@ -48,6 +48,8 @@ struct Menu: View {
                     VStack(alignment: .leading) {
                         Text("San Diego")
                             .font(.title)
+                            .padding(.bottom, 2)
+                        
                         Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
                     }
                     Image("Hero image")
@@ -55,12 +57,13 @@ struct Menu: View {
                         .frame(width: 150, height: 140)
                         .cornerRadius(25)
                 }
-                TextField("Search menu", text: $searchText)
-                    .font(.title)
+                TextField("     ...Search menu", text: $searchText)
+                    .frame(width: 350, height: 40)
+                    .font(.body)
                     .foregroundColor(.white)
                     .background(Color.white)
                     .cornerRadius(15)
-                    .padding(10)
+                    .padding(15)
                 }
             .padding(.leading)
             .frame(maxWidth: .infinity)
