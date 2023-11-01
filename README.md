@@ -9,4 +9,38 @@ Little Lemon Restaurant App
 - User defaults are used to store the login details.
 - Core data is used to store the JSON data from the menu API.
 
-## Table of Contents<img width="1060" alt="Zendesk_Support" src="https://github.com/ktroyan7/littlelemon/assets/108959100/6dd521ca-dcdf-4f6e-9f5e-76f48cb3b236">
+## Table of Contents
+
+## About the Brand
+<img width="731" alt="Brand" src="https://github.com/ktroyan7/littlelemon/assets/108959100/5fed7e30-a4b0-4832-bd5a-f029233f9c4e">
+
+Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment.
+The restaurant features a locally-sourced menu with daily specials.
+
+## User Journey Map and Persona
+### Persona
+<img width="644" alt="Persona" src="https://github.com/ktroyan7/littlelemon/assets/108959100/0f949f88-f2e8-477c-94f1-a0d3eb7a91f9">
+
+### Customer Journey Map
+<img width="660" alt="Journey" src="https://github.com/ktroyan7/littlelemon/assets/108959100/2815465c-21de-4db8-90c2-6c517104d869">
+
+### Wireframes
+<img width="902" alt="Wireframe" src="https://github.com/ktroyan7/littlelemon/assets/108959100/964a5929-52dc-4375-8632-3341c6275b65">
+
+
+### App functionality
+- First enter your 'First Name', 'Last Name', and 'Email' to register for the app.
+- This will take you to the home screen where you can view the full menu.
+- Search for your favorite food using the search bar or use the picker to select a category to explore.
+- You can use the bottom navigation to visit your user profile page.
+- If you would like to log out, click the 'Logout' button on the user profile page.
+
+### Screenshots - Onboarding, Home, User Profile
+
+
+
+
+
+
+
+### Video
