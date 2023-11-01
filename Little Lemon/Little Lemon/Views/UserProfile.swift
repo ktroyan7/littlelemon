@@ -15,7 +15,6 @@ struct UserProfile: View {
     let lastName: String = UserDefaults.standard.string(forKey: kLastName) ?? "Last name not provided"
     let email: String = UserDefaults.standard.string(forKey: kEmail) ?? "Email not provided"
     
-    
     var body: some View {
         VStack {
             Text("Personal Information")
@@ -31,13 +30,13 @@ struct UserProfile: View {
             
             Text("First Name: \(firstName)")
                 .font(.headline)
-  
+            
             Text("Last Name: \(lastName)")
                 .font(.headline)
-
+            
             Text("Email: \(email)")
                 .font(.headline)
-
+            
             Button {
                 UserDefaults.standard.set("", forKey: kFirstName)
                 UserDefaults.standard.set("", forKey: kLastName)
@@ -52,12 +51,8 @@ struct UserProfile: View {
                     .foregroundColor(.black)
                     .cornerRadius(20)
             }
-
-                
         }
-        
     }
-    
 }
 
 

@@ -68,6 +68,9 @@ struct Onboarding: View {
                     if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
                         isLoggedIn = true
                     }
+                    firstName = ""
+                    lastName = ""
+                    email = ""
                 }
             }
             
