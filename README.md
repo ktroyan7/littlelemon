@@ -1,4 +1,4 @@
-# Little Lemon Menu App TESTING
+# Little Lemon Menu App
 Little Lemon Restaurant App
 - The application is an iOS app written in Swift for viewing a restaurant menu.
 - Users will be capable of registering on the Little Lemon restaurant app.
