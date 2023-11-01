@@ -17,7 +17,9 @@ Little Lemon Restaurant App
     - [Wireframes](#Wireframes)
 - [App Functionality](#App-Functionality)
     - [Screenshots - Onboarding, Home, User Profile](#Screenshots---Onboarding,-Home,-User-Profile)
+    - [Video](#Video)
     - [Built With](#Built-With)
+    - [Sample Code](#Sample-Code)
 
 ## About the Brand
 <img width="731" alt="Brand" src="https://github.com/ktroyan7/littlelemon/assets/108959100/5fed7e30-a4b0-4832-bd5a-f029233f9c4e">
@@ -44,6 +46,9 @@ The restaurant features a locally-sourced menu with daily specials.
 
 ### Screenshots - Onboarding, Home, User Profile
 <img width="320" alt="Onboarding" src="https://github.com/ktroyan7/littlelemon/assets/108959100/83288771-414a-4bb5-8e33-7278a4d02e9c"><img width="320" alt="Home" src="https://github.com/ktroyan7/littlelemon/assets/108959100/3eac75b3-2f7a-483b-b714-5029663c6ed7"><img width="320" alt="UserProfile" src="https://github.com/ktroyan7/littlelemon/assets/108959100/826be02a-796f-4100-b417-519cb96e88f4">
+
+### Video
+https://github.com/ktroyan7/littlelemon/assets/108959100/dac16ad8-8386-42a9-b291-9861085c11b1
 
 ### Built With
 - [Swift](https://developer.apple.com/documentation/swift/)
