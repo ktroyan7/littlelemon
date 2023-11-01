@@ -13,10 +13,11 @@ Little Lemon Restaurant App
 - [About the Brand](#about-the-brand)
 - [User Journey Map and Persona](#User-Journey-Map-and-Persona)
     - [Persona](#persona)
-    - [Customer Journey Map](#Customer-Journey-Map)
+    - [User Journey Map](#User-Journey-Map)
     - [Wireframes](#Wireframes)
 - [App Functionality](#App-Functionality)
     - [Screenshots - Onboarding, Home, User Profile](#Screenshots---Onboarding,-Home,-User-Profile)
+    - [Built With](#Built-With)
 
 ## About the Brand
 <img width="731" alt="Brand" src="https://github.com/ktroyan7/littlelemon/assets/108959100/5fed7e30-a4b0-4832-bd5a-f029233f9c4e">
@@ -28,7 +29,7 @@ The restaurant features a locally-sourced menu with daily specials.
 ### Persona
 <img width="644" alt="Persona" src="https://github.com/ktroyan7/littlelemon/assets/108959100/0f949f88-f2e8-477c-94f1-a0d3eb7a91f9">
 
-### Customer Journey Map
+### User Journey Map
 <img width="660" alt="Journey" src="https://github.com/ktroyan7/littlelemon/assets/108959100/2815465c-21de-4db8-90c2-6c517104d869">
 
 ### Wireframes
@@ -44,4 +45,61 @@ The restaurant features a locally-sourced menu with daily specials.
 ### Screenshots - Onboarding, Home, User Profile
 <img width="320" alt="Onboarding" src="https://github.com/ktroyan7/littlelemon/assets/108959100/83288771-414a-4bb5-8e33-7278a4d02e9c"><img width="320" alt="Home" src="https://github.com/ktroyan7/littlelemon/assets/108959100/3eac75b3-2f7a-483b-b714-5029663c6ed7"><img width="320" alt="UserProfile" src="https://github.com/ktroyan7/littlelemon/assets/108959100/826be02a-796f-4100-b417-519cb96e88f4">
 
+### Built With
+- [Swift](https://developer.apple.com/documentation/swift/)
+- [SwiftUI](https://developer.apple.com/documentation/swiftui/)
+- [Core Data](https://developer.apple.com/documentation/coredata/)
+- [User Defaults](https://developer.apple.com/documentation/foundation/userdefaults/)
 
+### Sample Code
+Here is example code from my User Profile page.
+
+```swift
+struct UserProfile: View {
+    
+    @Environment(\.presentationMode) var presentation
+    
+    let firstName: String = UserDefaults.standard.string(forKey: kFirstName) ?? "First Name not provided"
+    let lastName: String = UserDefaults.standard.string(forKey: kLastName) ?? "Last name not provided"
+    let email: String = UserDefaults.standard.string(forKey: kEmail) ?? "Email not provided"
+    
+    var body: some View {
+        VStack {
+            Text("Personal Information")
+                .font(.title)
+                .foregroundColor(.black)
+            
+            Image("profile-image-placeholder")
+                .resizable()
+                .frame(width: 150, height: 150)
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.black, lineWidth: 3))
+            
+            Text("First Name: \(firstName)")
+                .font(.headline)
+            
+            Text("Last Name: \(lastName)")
+                .font(.headline)
+            
+            Text("Email: \(email)")
+                .font(.headline)
+            
+            Button {
+                UserDefaults.standard.set("", forKey: kFirstName)
+                UserDefaults.standard.set("", forKey: kLastName)
+                UserDefaults.standard.set("", forKey: kEmail)
+                UserDefaults.standard.set(false, forKey: kIsLoggedIn)
+                self.presentation.wrappedValue.dismiss()
+            } label: {
+                Text("Logout")
+                    .font(.headline)
+                    .frame(width: 200, height: 40)
+                    .background(Color.yellow)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+            }
+        }
+    }
+}
+```
