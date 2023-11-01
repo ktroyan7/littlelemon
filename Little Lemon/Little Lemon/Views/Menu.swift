@@ -53,15 +53,15 @@ struct Menu: View {
                 HeroSection()
                 TextField(" ...Search menu", text: $searchText)
                     .frame(width: 350, height: 40)
-                //                    .font(.body)
-                    .background(Color.white)
-                //                    .foregroundColor(.black)
+                //  .font(.body)
+                    .background(Color(red: 240, green: 240, blue: 240))
+                    .foregroundColor(.black)
                     .cornerRadius(15)
                     .padding(8)
             }
             .frame(maxWidth: .infinity)
             .padding(.leading)
-            .foregroundColor(.white)
+//            .foregroundColor(.white)
             .background(Color(red: 57, green: 76, blue: 69))
 
             Picker("Category", selection: $selectedCategory) {
@@ -106,6 +106,7 @@ struct Menu: View {
                 getMenuData()
             }
         }
+
     }
     
     func getMenuData() {

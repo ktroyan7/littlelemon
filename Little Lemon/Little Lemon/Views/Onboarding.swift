@@ -30,7 +30,7 @@ struct Onboarding: View {
                     Header()
                     HeroSection()
                     Form {
-                        Section(header: Text("Personal Information")) {
+                        Section(header: Text("Login Information")) {
                             Text("First Name*")
                             TextField("First Name", text: $firstName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -70,8 +70,10 @@ struct Onboarding: View {
                     }
                 }
             }
+            
 
         }
+        
      }
      
      fileprivate func saveProfile() {

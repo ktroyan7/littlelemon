@@ -26,6 +26,7 @@ struct Header: View {
                 .padding(10)
                 
         }
+        
     }
 }
 
