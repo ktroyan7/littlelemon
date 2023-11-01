@@ -10,7 +10,13 @@ Little Lemon Restaurant App
 - Core data is used to store the JSON data from the menu API.
 
 ## Table of Contents
-[Persona](#persona)
+- [About the Brand](#about-the-brand)
+- [User Journey Map and Persona](#User-Journey-Map-and-Persona)
+    - [Persona](#persona)
+    - [Customer Journey Map](#Customer-Journey-Map)
+    - [Wireframes](#Wireframes)
+- [App Functionality](#App-Functionality)
+    - [Screenshots - Onboarding, Home, User Profile](#Screenshots---Onboarding,-Home,-User-Profile)
 
 ## About the Brand
 <img width="731" alt="Brand" src="https://github.com/ktroyan7/littlelemon/assets/108959100/5fed7e30-a4b0-4832-bd5a-f029233f9c4e">
@@ -28,7 +34,7 @@ The restaurant features a locally-sourced menu with daily specials.
 ### Wireframes
 <img width="902" alt="Wireframe" src="https://github.com/ktroyan7/littlelemon/assets/108959100/964a5929-52dc-4375-8632-3341c6275b65">
 
-### App functionality
+## App Functionality
 - First enter your 'First Name', 'Last Name', and 'Email' to register for the app.
 - This will take you to the home screen where you can view the full menu.
 - Search for your favorite food using the search bar or use the picker to select a category to explore.
