@@ -36,9 +36,7 @@ The restaurant features a locally-sourced menu with daily specials.
 - If you would like to log out, click the 'Logout' button on the user profile page.
 
 ### Screenshots - Onboarding, Home, User Profile
-
-
-
+<img width="320" alt="Onboarding" src="https://github.com/ktroyan7/littlelemon/assets/108959100/83288771-414a-4bb5-8e33-7278a4d02e9c"><img width="320" alt="Home" src="https://github.com/ktroyan7/littlelemon/assets/108959100/3eac75b3-2f7a-483b-b714-5029663c6ed7"><img width="320" alt="UserProfile" src="https://github.com/ktroyan7/littlelemon/assets/108959100/826be02a-796f-4100-b417-519cb96e88f4">
 
 
 
