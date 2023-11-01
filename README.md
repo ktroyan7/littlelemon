@@ -50,6 +50,7 @@ The restaurant features a locally-sourced menu with daily specials.
 ### Video
 The below video shows a walkthrough of the app and its features.
 Click play on the below video to view the app features:
+
 https://github.com/ktroyan7/littlelemon/assets/108959100/dac16ad8-8386-42a9-b291-9861085c11b1
 
 ### Built With
