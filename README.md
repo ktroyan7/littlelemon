@@ -10,7 +10,7 @@ Little Lemon Restaurant App
 - Core data is used to store the JSON data from the menu API.
 
 ## Table of Contents
-
+[Persona](#persona)
 
 ## About the Brand
 <img width="731" alt="Brand" src="https://github.com/ktroyan7/littlelemon/assets/108959100/5fed7e30-a4b0-4832-bd5a-f029233f9c4e">
