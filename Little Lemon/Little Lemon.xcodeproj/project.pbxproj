@@ -54,6 +54,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		345D9E882AF455D300F93985 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				347680FE2AF019300087D250 /* FetchedObjects.swift */,
+				347680FF2AF019310087D250 /* Persistence.swift */,
+				349302492AF064E700C8524E /* ExampleDatabase.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		345D9E892AF4560400F93985 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				347681022AF019B90087D250 /* MenuList.swift */,
+				347681042AF019CD0087D250 /* MenuItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		347681062AF01A060087D250 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,14 +113,11 @@
 		34B148522AEDE157003795AC /* Little Lemon */ = {
 			isa = PBXGroup;
 			children = (
-				347680FE2AF019300087D250 /* FetchedObjects.swift */,
 				34B148532AEDE157003795AC /* Little_LemonApp.swift */,
-				347680FF2AF019310087D250 /* Persistence.swift */,
-				347681022AF019B90087D250 /* MenuList.swift */,
-				347681042AF019CD0087D250 /* MenuItem.swift */,
-				349302492AF064E700C8524E /* ExampleDatabase.xcdatamodeld */,
-				34A13DA92AF1B2B2008E18D9 /* Ext */,
+				345D9E892AF4560400F93985 /* Model */,
 				347681062AF01A060087D250 /* Views */,
+				345D9E882AF455D300F93985 /* Core Data */,
+				34A13DA92AF1B2B2008E18D9 /* Ext */,
 				34B148572AEDE159003795AC /* Assets.xcassets */,
 				34B148592AEDE159003795AC /* Preview Content */,
 			);
@@ -407,8 +423,7 @@
 				3493024A2AF064E700C8524E /* ExampleDatabase.xcdatamodel */,
 			);
 			currentVersion = 3493024A2AF064E700C8524E /* ExampleDatabase.xcdatamodel */;
-			name = ExampleDatabase.xcdatamodeld;
-			path = ../ExampleDatabase.xcdatamodeld;
+			path = ExampleDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

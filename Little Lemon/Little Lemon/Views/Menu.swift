@@ -25,7 +25,7 @@ struct Menu: View {
     }
 
         
-    //    Create predicate to filder FetchObjects with searchText variable
+    //    Create predicate to filter FetchObjects with searchText variable
     func buildPredicate() -> NSPredicate {
         var predicates: [NSPredicate] = []
         
